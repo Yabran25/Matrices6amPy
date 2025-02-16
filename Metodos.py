@@ -1,17 +1,30 @@
-
-class Metodos:
+import random
+class MetodosMatrices:
     
-    def Solicitardimensionesdematriz():
-        filas = int(input("Ingrese el número de filas: "))
-        columnas = int(input("Ingrese el número de columnas: "))
-        return filas, columnas
+    def Solicitardimensionesdematriz(self):
+        dimensiones = int(input("Ingrese las dimensiones de la matriz: "))
+        self.dimensiones = dimensiones
+        return self.dimensiones
 
-    def llenarmatrizvaloresramdom(filas, columnas):
-        matriz = []
-        for i in range(filas):
+    def llenarmatrizvaloresrandom(self):
+        m = []
+        for i in range(self.dimensiones):
             fila = []
-            for j in range(columnas):
+            for j in range(self.dimensiones):
                 valor = random.randint(1, 100)
                 fila.append(valor)
-            matriz.append(fila)
-        return matriz
+            m.append(fila)
+        return m
+
+    
+    def pareseimpares(m):
+        pares = []
+        impares = []
+        for i in len(m):
+            for j in len(m[i]):
+                print(f"- {m[i][j]} -")
+                if m[i][j] % 2 == 0:
+                    pares.append(m[i][j])
+                else:
+                    impares.append(m[i][j])
+        return pares, impares
