@@ -1,9 +1,8 @@
 import Metodos as mt
 
-matriz1 = mt.MetodosMatrices()
-dimensiones1 = matriz1.Solicitardimensionesdematriz()
-matriz1 = matriz1.llenarmatrizvaloresrandom()
-print(matriz1)
-pares1, impares1 = mt.MetodosMatrices.pareseimpares(matriz1)
-print(f"Los pares son: {pares1}")
-print(f"Los impares son: {impares1}")
+m = mt.Metodosmatrices()
+m.crearmatriz()
+m.imprimir()
+print("La suma de la matriz es: ", m.sumamatriz())
+print("La suma de la matriz sin numpy es: ", m.sumamatrizsinnp())
+print("El numero mayor de la matriz es: ", m.numeromayor())

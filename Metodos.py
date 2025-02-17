@@ -1,30 +1,34 @@
-import random
-class MetodosMatrices:
-    
-    def Solicitardimensionesdematriz(self):
-        dimensiones = int(input("Ingrese las dimensiones de la matriz: "))
-        self.dimensiones = dimensiones
-        return self.dimensiones
+import numpy as np
 
-    def llenarmatrizvaloresrandom(self):
-        m = []
-        for i in range(self.dimensiones):
-            fila = []
-            for j in range(self.dimensiones):
-                valor = random.randint(1, 100)
-                fila.append(valor)
-            m.append(fila)
-        return m
+class Metodosmatrices:
 
+    def crearmatriz(self):
+        dimension = int(input("Ingrese la dimension de la matriz: "))
+        self.dimension = dimension
+        matriz = np.random.randint(1, 100, size=(self.dimension, self.dimension))
+        self.matriz = matriz
+        return self.matriz
     
-    def pareseimpares(m):
-        pares = []
-        impares = []
-        for i in len(m):
-            for j in len(m[i]):
-                print(f"- {m[i][j]} -")
-                if m[i][j] % 2 == 0:
-                    pares.append(m[i][j])
-                else:
-                    impares.append(m[i][j])
-        return pares, impares
+    def imprimir(self):
+        print(self.matriz)
+
+    def sumamatriz(self):
+        suma = np.sum(self.matriz)
+        return suma
+    
+    def sumamatrizsinnp(self):
+        suma = 0
+
+        for i in range(self.dimension):
+            for j in range(self.dimension):
+                suma += self.matriz[i][j]
+        return suma
+
+    def numeromayor(self):
+        nmayor = 0
+
+        for i in range(self.dimension):
+            for j in range(self.dimension):
+                if nmayor < self.matriz[i][j]:
+                    nmayor = self.matriz[i][j]
+        return nmayor
