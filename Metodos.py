@@ -32,3 +32,41 @@ class Metodosmatrices:
                 if nmayor < self.matriz[i][j]:
                     nmayor = self.matriz[i][j]
         return nmayor
+    
+    def conteofilas(self):
+        sumafilas = []
+        sumacolumnas = []
+
+        for i in range(self.dimension):
+            sumaf = 0
+            for j in range(self.dimension):
+                sumaf += self.matriz[i][j]
+            sumafilas.append(sumaf)
+        return sumafilas
+    
+    def conteocolumnas(self):
+        sumafilas = []
+        sumacolumnas = []
+
+        for i in range(self.dimension):
+            sumac = 0
+            for j in range(self.dimension):
+                sumac += self.matriz[j][i]
+            sumacolumnas.append(sumac)
+        return sumacolumnas
+    
+    def resultadomayorcolummas(self,sumacolumnas):
+        nmayor = 0
+
+        for i in range(self.dimension):
+                if nmayor < sumacolumnas[i]:
+                    nmayor = sumacolumnas[i]
+        return nmayor
+    
+    def matrizenvector(self):
+        Mvector = []
+
+        for i in range(self.dimension):
+            for j in range(self.dimension):
+                Mvector.append(self.matriz[i][j])
+        return Mvector
